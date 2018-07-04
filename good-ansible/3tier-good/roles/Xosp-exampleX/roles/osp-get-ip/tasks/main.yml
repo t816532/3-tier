@@ -1,0 +1,13 @@
+---
+# tasks file for osp-facts
+   - name: Fetch Instance Info
+     os_server_facts:
+      cloud: ospcloud
+      region_name: RegionOne
+     register: result
+   - name: List Instances
+     debug: var=item.metadata.group
+     loop: "{{result.ansible_facts.openstack_servers }}"
+   - name: List IP
+     debug: var=item.public_v4
+     loop: "{{result.ansible_facts.openstack_servers }}"
