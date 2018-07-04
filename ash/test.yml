@@ -1,0 +1,12 @@
+---
+
+- hosts: apps
+  gather_facts: false
+  become: true
+  
+  tasks:
+  - name: app install
+    yum:
+     name: tomcat 
+     state: latest 
+

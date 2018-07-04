@@ -1,0 +1,34 @@
+[3tierapp:vars]
+#GUID=50aa
+
+###########################################################################
+### Ansible Vars
+###########################################################################
+timeout=60
+ansible_become=yes
+ansible_ssh_user=ec2-user
+ansible_ssh_private_key_file="~/.ssh/50aakey.pem"
+ansible_ssh_common_args="-o StrictHostKeyChecking=no"
+[3tierapp:children]
+frontends
+apps
+appdbs
+support
+
+
+[frontends]
+## These are the frontends
+frontend1.50aa.internal ansible_ssh_host=frontend1.50aa.example.opentlc.com
+
+[apps]
+## These are the apps
+app1.50aa.internal ansible_ssh_host=app1.50aa.example.opentlc.com
+app2.50aa.internal ansible_ssh_host=app2.50aa.example.opentlc.com
+
+[appdbs]
+## These are the appdbs
+appdb1.50aa.internal ansible_ssh_host=appdb1.50aa.example.opentlc.com
+
+## These are the support
+[support]
+support1.50aa.internal ansible_ssh_host=support1.50aa.example.opentlc.com

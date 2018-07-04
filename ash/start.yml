@@ -1,0 +1,12 @@
+---
+
+- hosts: apps
+  gather_facts: false
+  become: true
+  
+  roles:
+    - { name: app-tier }
+  
+
+  #roles:
+  #  - { role: "./roles/cleaner" }

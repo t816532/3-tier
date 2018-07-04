@@ -1,0 +1,5 @@
+#ansible-playbook -i myinventory.file ./test.yml
+#ansible-playbook -i myinventory.file remove-3tier.yml
+#ansible-playbook --check app-tier.yml
+
+ansible-playbook -i myinventory.file ./db-tier.yml --tags "postgresql"

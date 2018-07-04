@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  gather_facts: true
+  tasks:
+  - name: GET IP ADDRESS
+    setup:
+    register: result
+  - name:  PRINT THE OUTPUT
+    debug: var=result.ansible_facts.ansible_all_ipv4_addresses

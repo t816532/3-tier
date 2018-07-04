@@ -1,0 +1,1 @@
+useradd -d /home/t816532 -c "Ash" -g100 ash

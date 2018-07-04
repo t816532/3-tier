@@ -1,0 +1,16 @@
+---
+# tasks file for roles/just-checking
+- name: Check connectivity
+  ping:
+
+- name: Create some users
+  user:
+   name: "{{ item.name }}"
+   state: present
+   password: "{{ item.password }}"
+   comment: "{{ item.comment }}"
+   create_home: yes 
+  loop:
+   - { name: toto1, comment: "testing user", password: redhat@123 }
+   - { name: toto12, comment: "testing user12", password: redhat@1234 }
+   - { name: toto13, comment: "testing user12", password: redhat@12345 }

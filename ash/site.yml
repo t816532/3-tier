@@ -1,0 +1,4 @@
+- hosts: "{{ grp_name }}"
+  gather_facts: true
+  roles:
+   - just-checking

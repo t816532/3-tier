@@ -1,0 +1,11 @@
+---
+#- hosts: localhost
+- hosts: 127.0.0.1
+  gather_facts: true
+  tasks:
+  - name: GET IP ADDRESS
+    setup:
+      filter: ansible_all_ipv4_addresses
+      register: ip
+
+  - debug: msg="{{ip.ansible_facts.ansible_all_ipv4_addresses}}"

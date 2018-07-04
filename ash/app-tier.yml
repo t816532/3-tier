@@ -1,0 +1,9 @@
+---
+
+- hosts: apps
+  gather_facts: false
+  become: true
+  
+  roles:
+    - {name: base-config, tags: base-config}
+    - {name: app-tier, tags: app-tier}
