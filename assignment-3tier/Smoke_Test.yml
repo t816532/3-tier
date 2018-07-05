@@ -1,0 +1,4 @@
+---
+- hosts: all #jumpbox
+  roles:
+  - name: smoke
