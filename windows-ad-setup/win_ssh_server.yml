@@ -1,0 +1,7 @@
+---
+- name: setup ssh on windows
+  hosts: windows
+#  gather_facts: false
+
+  roles:
+    - win_service_config
