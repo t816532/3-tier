@@ -1,0 +1,1 @@
+ansible-playbook ad_user_group_create.yml
