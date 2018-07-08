@@ -11,3 +11,6 @@
    - name: List IP
      debug: var=item.public_v4
      loop: "{{result.ansible_facts.openstack_servers }}"
+   - name: List HOST
+     debug: var=item.metadata.deployment_name
+     loop: "{{result.ansible_facts.openstack_servers }}"
