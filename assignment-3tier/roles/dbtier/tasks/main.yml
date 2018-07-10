@@ -1,0 +1,19 @@
+---
+  - name: install postgres
+    yum:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+       - postgresql-server
+
+  - name: postgreSQL database is initialized.
+    command: postgresql-setup initdb
+    args:
+      creates: /var/lib/pgsql/data/postgresql.conf
+      warn: false
+
+  - name: start postgres
+    service:
+      name: postgresql
+      state: started
+      enabled: true
