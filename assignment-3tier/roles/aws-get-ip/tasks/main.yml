@@ -2,10 +2,10 @@
 # tasks file for osp-facts
    - name: Fetch Instance Info
      os_server_facts:
-      cloud: ospcloud
-      region_name: RegionOne
-#      cloud: opentlc-access
-#      region_name: us-east-1
+#      cloud: ospcloud
+#      region_name: RegionOne
+      cloud: opentlc-access
+      region_name: us-east-1
      register: result
    - name: List Instances
      debug: var=item.metadata.group

@@ -1,4 +1,4 @@
-- hosts: tag_instance_filter_three_tier_app_psrivast_redhat_com
+- hosts: tag_instance_filter_three_tier_app_ashley_king_spark_co_nz
   gather_facts: false
   tasks:
   - name: Check the instances status
@@ -10,4 +10,3 @@
     delegate_to: localhost
     with_items:
       - "{{ inventory_hostname }}"
-        
