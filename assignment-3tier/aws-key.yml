@@ -24,7 +24,7 @@
       organization: Default
       state: present
       kind: ssh
-      tower_host: tower1.a7d6.example.opentlc.com
+      tower_host: tower1.7eb0.example.opentlc.com
       tower_username: admin
       tower_password: r3dh4t1!
       ssh_key_data: "/root/.ssh/{{ file_to_copy.stdout }}"
